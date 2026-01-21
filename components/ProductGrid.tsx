@@ -24,7 +24,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({
                 ))}
             </div>
 
-            {/* Infinite Scroll Trigger */}
             <div ref={loadMoreRef} className="mt-8 flex justify-center">
                 {isFetchingNextPage && (
                     <Loader2 className="w-8 h-8 animate-spin text-blue-500" />

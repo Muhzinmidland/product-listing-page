@@ -10,14 +10,13 @@ import ProductListLoading from './ProductListLoading';
 import { fetchProducts } from '@/api/products';
 import { SortOption } from '@/app/types';
 
-// Main Products Component
+
 const ProductListing: React.FC = () => {
     const [search, setSearch] = useState('');
     const [debouncedSearch, setDebouncedSearch] = useState('');
     const [sort, setSort] = useState<SortOption>('none');
     const loadMoreRef = useRef<HTMLDivElement>(null);
 
-    // Debounce search
     useEffect(() => {
         const timer = setTimeout(() => {
             setDebouncedSearch(search);
@@ -26,7 +25,6 @@ const ProductListing: React.FC = () => {
         return () => clearTimeout(timer);
     }, [search]);
 
-    // Infinite query
     const {
         data,
         fetchNextPage,
@@ -45,7 +43,6 @@ const ProductListing: React.FC = () => {
         initialPageParam: 0,
     });
 
-    // Intersection Observer for infinite scroll
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {

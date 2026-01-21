@@ -26,9 +26,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
             <div className="max-w-7xl mx-auto px-4 py-6">
                 <h1 className="text-3xl font-bold text-gray-900 mb-4">Product Store</h1>
 
-                {/* Search and Sort Controls */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                    {/* Search */}
                     <div className="flex-1 relative">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                         <input
@@ -40,7 +38,6 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
                         />
                     </div>
 
-                    {/* Sort */}
                     <div className="sm:w-64">
                         <div className="relative">
                             <SortAsc className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -59,7 +56,6 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
                     </div>
                 </div>
 
-                {/* Results count */}
                 {!isLoading && (
                     <div className="mt-4 text-sm text-gray-600">
                         {debouncedSearch && `Search results for "${debouncedSearch}" - `}
